@@ -36,37 +36,25 @@ public class UserRegistration extends HttpServlet {
             String email = request.getParameter("user_email");
             String pass = request.getParameter("user_password");
             
-            //out.println("<h1> "+name+"</h1>");
-            
-            // database handeling
-             
-            // Load driver
+         
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            // Get connection
-            try{
-                 Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+            Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
             
-            // Prepare statement
+    
             String query = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, name);
             ps.setString(2, email);
             ps.setString(3, pass);
-            
-            // Execute update
             int rowsAffected = ps.executeUpdate();
             
             if (rowsAffected > 0) {
                 out.println("<h1>User registration successful</h1>");
-                //System.out.println("User registration successful");
             } else {
                 out.println("<h1>Failed to register user</h1>");
-                //System.out.println("Failed to register use");
             }
-            }catch(SQLException e){
-                out.println("<h5> error"+e+"</h5>");
-            }
+            
             
             out.println("</body>");
             out.println("</html>");
@@ -104,6 +92,6 @@ public class UserRegistration extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }
