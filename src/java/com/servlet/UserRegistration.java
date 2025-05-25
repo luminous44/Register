@@ -36,6 +36,8 @@ public class UserRegistration extends HttpServlet {
             String email = request.getParameter("user_email");
             String pass = request.getParameter("user_password");
             
+           
+            
          
             Class.forName("com.mysql.cj.jdbc.Driver");
             

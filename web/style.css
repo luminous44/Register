@@ -12,6 +12,24 @@ body{
     padding: 20px;
     border: 2px solid black;
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+}
+.container p{
+    color: green;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 0px;
+    margin-bottom: 10px;
+    
+}
+.container h1{
+
+    font-weight: 300;
+    font-size: 25px;
 }
 .card{
     height: 100%;
@@ -20,20 +38,28 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+   
+      
 }
 .form{
      display: flex;
      flex-direction: column;
      justify-content: center;
      align-items: center;
+    
 }
 .form input{
     border: none;
     height: 30px;
     width: 260px;
-    border-bottom: 2px solid aquamarine;
+    border-bottom: 2px solid rgb(30, 147, 108);
     font-family: 'Courier New', Courier, monospace;
      
+}
+.form input:focus{
+   outline: none;
+  box-shadow: none;
+  
 }
 .form button{
     background-color: rgb(23, 129, 129);
@@ -44,4 +70,38 @@ body{
     border-radius: 5px;
     font-size: 15px;
    font-family: 'Courier New', Courier, monospace;
+}
+
+.processBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column;
+    display: none;
+}
+.processBar h5{
+
+    margin-top: 35px;
+}
+
+
+.loader {
+  --d:22px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  color: #25b09b;
+  box-shadow: 
+    calc(1*var(--d))      calc(0*var(--d))     0 0,
+    calc(0.707*var(--d))  calc(0.707*var(--d)) 0 1px,
+    calc(0*var(--d))      calc(1*var(--d))     0 2px,
+    calc(-0.707*var(--d)) calc(0.707*var(--d)) 0 3px,
+    calc(-1*var(--d))     calc(0*var(--d))     0 4px,
+    calc(-0.707*var(--d)) calc(-0.707*var(--d))0 5px,
+    calc(0*var(--d))      calc(-1*var(--d))    0 6px;
+  animation: l27 1s infinite steps(8);
+}
+@keyframes l27 {
+  100% {transform: rotate(1turn)}
 }
