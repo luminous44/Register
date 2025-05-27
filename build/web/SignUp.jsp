@@ -11,10 +11,10 @@
 
     <div class="container">
          <h1>Registration here !!</h1>
-         <p id="msg">Registration successful</p>
+         <p id="msg"></p>
         <div class="card" id="card">
            
-            <form  id="registration" class="form">
+            <form  action ="Registration" id="registration" class="form">
                 <input type="text" name="user_name" placeholder="Enter your name" required> <br>
                 <input type="email" name="user_email" placeholder="Enter your email" required><br>
                 <input type="password" name="user_password" placeholder="Enter your password" required> <br>
